@@ -21,10 +21,8 @@
       }
 
       body {
-        align-items: center;
         display: flex;
         flex-direction: column;
-        justify-content: center;
         min-height: 100%;
       }
 
@@ -47,22 +45,48 @@
         white-space: pre;
       }
 
-      h1 {
-        margin: 9em auto 1.5em;
+      h1, p, audio {
+        margin: 0 auto 1.5em;
       }
 
-      p {
-        margin: 0 auto 1.5em;
+      .Align {
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+      }
+
+      .Align.bottom {
+        justify-content: flex-end;
+      }
+
+      .Align.top {
+        justify-content: flex-start;
+      }
+
+      .Split {
+        display: flex;
+        flex: 1;
+        flex-direction: column;
+      }
+
+      .Split > * {
+        flex: 1;
       }
     </style>
   </head>
-  <body>
-    <h1>selfish lovers   </h1>
-    <p>         grand rapids, michigan</p>
-    <p><time datetime="2025">2025</time>                 </p>
-
-    <audio controls>
-      <source src="enough_is_enough.mp3" type="audio/mpeg">
-    </audio>
+  <body class="Split">
+    <div></div>
+    <div class="Split">
+      <div class="Align top">
+        <h1>selfish lovers   </h1>
+        <p>         grand rapids          </p>
+        <p><time datetime="2025">2025</time>       </p>
+      </div>
+      <div class="Align bottom">
+        <audio controls>
+          <source src="enough_is_enough.mp3" type="audio/mpeg">
+        </audio>
+      </div>
+    </div>
   </body>
 </html>
